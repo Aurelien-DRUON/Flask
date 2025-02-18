@@ -11,18 +11,26 @@
 <body>
     <img src="../static/pouler.png" alt="Musée" id="clickable-image-pouler"
         onclick="openPopup(this.src, 'Le pouler roti de pouler.fr')">
-    </div>
     <img src="../static/skyyart.png" alt="Musée" id="clickable-image-skyyart"
         onclick="openPopup(this.src, 'Les chaussures volées de Skyyart')">
-    </div>
+    <img src="../static/boogie-bombe.png" alt="Musée" id="clickable-image-boogie-bombe"
+        onclick="openPopup(this.src, 'Saviez vous que la bombe boogie woogie était de retour pour la fête hivernale ?')">
+    <img src="../static/donut.png" alt="Musée" id="clickable-image-donut"
+        onclick="openPopup(this.src, 'Le donut sucré au sucre de Homer Simpson')">
 
     <div id="popup" class="popup" onclick="closePopup()">
         <div class="popup-content">
             <img id="popup-image" src="" alt="Popup Image">
-            <div class="popup-text">
-                <p id="popup-text"></p>
-            </div>
+            <p id="popup-text"></p>
         </div>
+    </div>
+    </div>
+
+    <div id="welcome-message" class="welcome-message">
+        <p
+            style="position: absolute; top: 3.5%; left: 16%; color:black; width: 40%; text-align: center;text-wrap: wrap;">
+            Bonjour {{username}}, bienvenue au musée</p>
+        <img src="../../static/muséain.png" alt="Welcome Image" id="welcome-image">
     </div>
 
     <script>
@@ -38,6 +46,10 @@
     </script>
 
     <style>
+        body {
+            overflow: hidden;
+        }
+
         .image-container {
             text-align: center;
         }
@@ -45,7 +57,7 @@
         #clickable-image-pouler {
             cursor: pointer;
             position: absolute;
-            top: 47%;
+            top: 46.5%;
             left: 2.5%;
             width: 7%;
         }
@@ -56,6 +68,22 @@
             top: 47.5%;
             left: 14.5%;
             width: 4%;
+        }
+
+        #clickable-image-boogie-bombe {
+            cursor: pointer;
+            position: absolute;
+            top: 48%;
+            left: 70.5%;
+            width: 3.5%;
+        }
+
+        #clickable-image-donut {
+            cursor: pointer;
+            position: absolute;
+            top: 29%;
+            left: 69.5%;
+            width: 5.5%;
         }
 
         .popup {
@@ -79,13 +107,26 @@
             align-items: center;
         }
 
-        .popup-text {
+        #popup-text {
             color: white;
         }
 
         #popup-image {
             max-width: 80%;
             max-height: 80%;
+        }
+
+        .welcome-message {
+            position: absolute;
+            bottom: -70%;
+            right: 0;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        #welcome-image {
+            width: 75%;
         }
     </style>
 </body>
