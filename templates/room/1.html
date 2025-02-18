@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musée</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+    <img src="../static/pouler.png" alt="Musée" id="clickable-image-pouler"
+        onclick="openPopup(this.src, 'Le pouler roti de pouler.fr')">
+    </div>
+    <img src="../static/skyyart.png" alt="Musée" id="clickable-image-skyyart"
+        onclick="openPopup(this.src, 'Les chaussures volées de Skyyart')">
+    </div>
+
+    <div id="popup" class="popup" onclick="closePopup()">
+        <div class="popup-content">
+            <img id="popup-image" src="" alt="Popup Image">
+            <div class="popup-text">
+                <p id="popup-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(src, text) {
+            document.getElementById('popup-image').src = src;
+            document.getElementById('popup-text').innerText = text;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+    <style>
+        .image-container {
+            text-align: center;
+        }
+
+        #clickable-image-pouler {
+            cursor: pointer;
+            position: absolute;
+            top: 47%;
+            left: 2.5%;
+            width: 7%;
+        }
+
+        #clickable-image-skyyart {
+            cursor: pointer;
+            position: absolute;
+            top: 47.5%;
+            left: 14.5%;
+            width: 4%;
+        }
+
+        .popup {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            position: relative;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-text {
+            color: white;
+        }
+
+        #popup-image {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+</body>
+
+</html>

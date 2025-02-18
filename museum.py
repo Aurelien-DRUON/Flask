@@ -1,14 +1,18 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def index():
-    return redirect("/salle/1")
+    return redirect(url_for("room1"))
 
-@app.route('/salle/<int:room_id>')
-def room(room_id):
-    return render_template("room.html", room_id=room_id)
+@app.route("/room/1")
+def room1():
+    return render_template("room/1.html")
 
-if __name__ == '__main__':
+@app.route("/room/2")
+def room2():
+    return render_template("room/2.html")
+
+if __name__ == "__main__":
     app.run()
