@@ -9,7 +9,37 @@
 </head>
 
 <body>
+    <img src="../static/crocs.png" alt="Musée" id="clickable-image-crocs"
+        onclick="openPopup(this.src, 'Les crocs cars maxi chères volées par Fel Doup')">
+    <img src="../static/skyyart.png" alt="Musée" id="clickable-image-skyyart"
+        onclick="openPopup(this.src, 'Les chaussures volées de Skyyart')">
+    <img src="../static/boogie-bombe.png" alt="Musée" id="clickable-image-boogie-bombe"
+        onclick="openPopup(this.src, 'Saviez vous que la bombe boogie woogie était de retour pour la fête hivernale ?')">
+    <img src="../static/donut.png" alt="Musée" id="clickable-image-donut"
+        onclick="openPopup(this.src, 'Le donut sucré au sucre de Homer Simpson')">
+    <img src="../static/nils.png" alt="Musée" id="clickable-image-nils"
+        onclick="openPopup(this.src, 'Ah bah, c\'est bien Nils !')">
+
+    <div id="popup" class="popup" onclick="closePopup()">
+        <div class="popup-content">
+            <img id="popup-image" src="" alt="Popup Image">
+            <p id="popup-text"></p>
+        </div>
+    </div>
+
     <div id="room1" class="room1" onclick="window.location.href='/room/1'"></div>
+
+    <script>
+        function openPopup(src, text) {
+            document.getElementById('popup-image').src = src;
+            document.getElementById('popup-text').innerText = text;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
 
     <style>
         .image-container {
@@ -25,12 +55,12 @@
             cursor: pointer;
         }
 
-        #clickable-image-pouler {
+        #clickable-image-crocs {
             cursor: pointer;
             position: absolute;
-            top: 46.5%;
-            left: 2.5%;
-            width: 7%;
+            top: 47%;
+            left: 3%;
+            width: 6%;
         }
 
         #clickable-image-skyyart {
@@ -57,6 +87,14 @@
             width: 5.5%;
         }
 
+        #clickable-image-nils {
+            cursor: pointer;
+            position: absolute;
+            top: 38%;
+            left: 84.5%;
+            width: 9%;
+        }
+
         .popup {
             display: none;
             position: absolute;
@@ -67,6 +105,7 @@
             background-color: rgba(0, 0, 0, 0.3);
             justify-content: center;
             align-items: center;
+            z-index: 100;
         }
 
         .popup-content {
