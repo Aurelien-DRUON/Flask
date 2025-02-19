@@ -9,54 +9,19 @@
 </head>
 
 <body>
-    <img src="../static/pouler.png" alt="Musée" id="clickable-image-pouler"
-        onclick="openPopup(this.src, 'Le pouler roti de pouler.fr')">
-    <img src="../static/skyyart.png" alt="Musée" id="clickable-image-skyyart"
-        onclick="openPopup(this.src, 'Les chaussures volées de Skyyart')">
-    <img src="../static/boogie-bombe.png" alt="Musée" id="clickable-image-boogie-bombe"
-        onclick="openPopup(this.src, 'Saviez vous que la bombe boogie woogie était de retour pour la fête hivernale ?')">
-    <img src="../static/donut.png" alt="Musée" id="clickable-image-donut"
-        onclick="openPopup(this.src, 'Le donut sucré au sucre de Homer Simpson')">
-
-    <div id="popup" class="popup" onclick="closePopup()">
-        <div class="popup-content">
-            <img id="popup-image" src="" alt="Popup Image">
-            <p id="popup-text"></p>
-        </div>
-    </div>
-
-    <div id="room2" class="room2" onclick="window.location.href='/room/2'"></div>
-
-    <div id="welcome-message" class="welcome-message">
-        <p
-            style="position: absolute; top: 3.5%; left: 16%; color:black; width: 40%; text-align: center;text-wrap: wrap;">
-            Bonjour {{username}}, bienvenue au musée</p>
-        <img src="../../static/muséain.png" alt="Welcome Image" id="welcome-image">
-    </div>
-
-    <script>
-        function openPopup(src, text) {
-            document.getElementById('popup-image').src = src;
-            document.getElementById('popup-text').innerText = text;
-            document.getElementById('popup').style.display = 'flex';
-        }
-
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
-    </script>
+    <div id="room1" class="room1" onclick="window.location.href='/room/1'"></div>
 
     <style>
         .image-container {
             text-align: center;
         }
 
-        #room2 {
+        #room1 {
             position: absolute;
-            top: 0;
+            top: 80%;
             left: 35%;
             width: 25.5%;
-            height: 91%;
+            height: 20%;
             cursor: pointer;
         }
 
